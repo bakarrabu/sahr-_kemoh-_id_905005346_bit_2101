@@ -37,3 +37,8 @@ java -cp out SwingAssignment
 
 ## Requirements
 JDK 17 or newer.
+
+## Wireframe
+Designed in Figma: https://www.figma.com/design/35cVrKGiYNXCoDbFic19er
+
+![Wireframe](wireframe/wireframe.png)
