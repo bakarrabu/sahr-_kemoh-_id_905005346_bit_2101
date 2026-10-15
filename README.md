@@ -1,44 +1,46 @@
 # PROG209 – Basic Interactive GUI (Java Swing)
 
 Individual assignment for **PROG209 Event Driven Programming**, Limkokwing University of Creative Technology, Sierra Leone.
-Student: **Sahr** · Examiner: Amandus Benjamin Coker
+**Student:** Sahr Kemoh Ngaujah · **Examiner:** Amandus Benjamin Coker
 
-## What it does
-- Opens an 800 x 800 `JFrame` titled **"Java Swing Assignment"** with a custom application icon (`ImageIcon`).
-- A `JPanel` holds a `JLabel` reading *"Welcome to Java Swing First Individual Assignment by Sahr"* with an image above it.
-- **Change Text** – replaces the label text with what you type (Enter also works).
-- **Change Background** – opens a colour picker and changes the panel background.
-- **Reset** – restores the original text and colour.
-- The application exits when the close button is clicked.
+![App screenshot](screenshots/01-launch.png)
 
-## Inheritance and constructor
-- `BaseWindow` (parent class) – its constructor instantiates the `JFrame frame` and sets title, size and close operation.
-- `SwingAssignment extends BaseWindow` (child class) – its constructor calls `super("Java Swing Assignment", 800, 800)` and then builds the panel, label and buttons.
+## Features
+- 800 × 800 `JFrame` titled **"Java Swing Assignment"** with a custom logo (`ImageIcon`), closes on the X button.
+- `JPanel panel` holding `JLabel label` with the text *"Welcome to Java Swing First Individual Assignment by Sahr"* and the logo.
+- **Change Text** – type in the box and click the button (or press Enter) to change the label.
+- **Colour circles** – one click changes the panel background (Midnight, Deep Indigo, Forest, Wine, Cloud, Sand).
+- **Custom…** – opens a full colour picker for any background colour.
+- **Reset** – restores the original text and background.
+- Text colours switch automatically on light backgrounds so everything stays readable.
+
+## Classes (inheritance)
+| Class | Extends | Purpose |
+|---|---|---|
+| `BaseWindow` | – (parent) | Creates and configures the `JFrame` in its constructor |
+| `SwingAssignment` | `BaseWindow` | Main class: builds the panel, label and controls; `super("Java Swing Assignment", 800, 800)` |
+| `RoundedPanel` | `JPanel` | Rounded card background |
+| `RoundedButton` | `JButton` | Gradient / outline buttons with hover effect |
+| `ColourSwatch` | `JButton` | Round colour-picker button |
 
 ## Project structure
 ```
-src/
-  BaseWindow.java        parent class
-  SwingAssignment.java   main class (child)
-  KEMOH.png               application icon
-wireframe/               Figma wireframe export
-screenshots/             screenshots of the running app
+src/           Java source files + logo.png
+screenshots/   Screenshots of the running app
+wireframe/     Figma wireframe export
+PROG209_Sahr_Swing_Assignment.docx   Documentation
 ```
-
-## How to run
-**IntelliJ IDEA:** open the folder, mark `src` as Sources Root, run `SwingAssignment.main()`.
-**VS Code:** install "Extension Pack for Java", open the folder, open `SwingAssignment.java`, click **Run**.
-**Terminal:**
-```
-javac -d out src/*.java
-cp src/KEMOH.png out/
-java -cp out SwingAssignment
-```
-
-## Requirements
-JDK 17 or newer.
 
 ## Wireframe
 Designed in Figma: https://www.figma.com/design/35cVrKGiYNXCoDbFic19er
 
-![Wireframe](wireframe/wireframe.png)
+## How to run
+**IntelliJ IDEA:** File → Open → select this folder. Right-click `src` → Mark Directory as → Sources Root. Open `SwingAssignment.java` and click ▶ next to `main`.
+
+**Terminal:**
+```
+javac -d out src/*.java
+cp src/logo.png out/
+java -cp out SwingAssignment
+```
+Requires JDK 17 or newer.
